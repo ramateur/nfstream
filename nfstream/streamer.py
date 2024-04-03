@@ -76,8 +76,8 @@ class NFStreamer(object):
         self.bpf_filter = bpf_filter
         self.promiscuous_mode = promiscuous_mode
         self.snapshot_length = snapshot_length
-        self.idle_timeout = idle_timeout
-        self.active_timeout = active_timeout
+        self.idle_timeout = idle_timeout * 1000 # for ts resolution x1000
+        self.active_timeout = active_timeout * 1000 # for ts resolution x1000
         self.accounting_mode = accounting_mode
         self.udps = udps
         self.n_dissections = n_dissections
